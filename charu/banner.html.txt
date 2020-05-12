@@ -1,0 +1,64 @@
+!DOCTYPE html
+html
+head
+style
+div{
+	position relative;
+    margin auto;
+    width 50%;  
+    height 300px;
+}
+.relatve {
+	position absolute;
+    z-index1;
+    background-color blue;
+	width 100%;
+
+}
+.banner{
+	position absolute;
+	z-index1;
+    text-aligncenter;
+    border 1px solid;
+    top2%;
+	background-color white;
+	left -10%;
+    width120%;
+    height 40px;
+}
+.help{
+	z-index-1;
+	position absolute;
+	background-color gray;
+	height 40px;
+    width 20%;
+    top 8%;
+    left -8.5%;
+    transform rotate(30deg);
+}
+.help2{
+	z-index-1;
+	position absolute;
+	background-color gray;
+	height 40px;
+    width 20%;
+    top 8%;
+    right -8.5%;
+    transform rotate(-30deg);
+}
+style
+head
+body
+
+h2position static;h2
+
+pAn element with position static; is not positioned in any special way; it is 
+always positioned according to the normal flow of the pagep
+div
+div class=relatvediv
+div class=bannerThis div elementdiv
+div class=helpdiv
+div class=help2div
+div
+body
+html

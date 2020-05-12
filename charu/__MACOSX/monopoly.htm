@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        td{
+            z-index: 1;
+            background-color: azure;
+            transform: scale(1);
+            width: 50px;
+            padding: 0;
+        }
+        .center{
+            width: 450px;
+            height: 450px;
+            z-index: 0;
+            border: solid 4px;
+            background-color: rgb(162, 175, 175);
+        }
+        .corner{
+            z-index: 1;
+            border: solid 2px;
+            width: 75px;
+            height: 75px;
+        }
+        .top{
+            z-index: 1;
+            border: solid 2px;
+            transform: rotate(180deg);
+            transition: 1s;
+        }
+        .top:hover{
+            position: relative;
+            z-index: 5;
+            transform: scale(2);
+            border-bottom: solid 2px;
+        }
+        .right{
+            border: solid 2px;
+            z-index: 1;
+            transition: 1s;
+        }
+        .right:hover{
+            position: relative;
+            z-index: 5;
+            transform: scale(2) rotate(90deg);
+            border-bottom: solid 2px;
+        }
+        .left{
+            border: solid 2px;
+            transform: rotate(180deg);
+            z-index: 1;
+            transition: 1s;
+        }
+        .left:hover{
+            position: relative;
+            z-index: 5;
+            transform: scale(2) rotate(90deg);
+            border-bottom: solid 2px;
+        }
+        .bottom{
+            border: solid 2px;
+            z-index: 1;
+            transition: 1s;
+        }
+        .bottom:hover{
+            position: relative;
+            z-index: 5;
+            transform: scale(2);
+            border-bottom: solid 2px;
+        }
+        .tittle{
+            z-index: 2;
+            position: absolute; 
+            border-bottom: solid 2px;
+            left: 0;
+            top: 0;
+            height: 20px;
+            width: 100%;
+            background-color: #000;
+        }
+        .body{
+            z-index: 2;
+            text-align: center;
+            font-size: 30%;
+            line-height: 15px;
+            vertical-align: middle;
+            position: absolute; 
+            left: 0;
+            top: 20px;
+            height: 52px;
+            width: 100%;
+            background-color: azure;
+        }
+        .amount{
+            z-index: 2;
+            position: absolute; 
+            left: 0;
+            bottom: -23px;
+            width: 100%;
+            font-size: xx-small;
+            text-align: center;
+        }
+        .tittle-middle{
+            z-index: 1;
+            position: absolute; 
+            border-right: solid 2px;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 100%;
+            background-color: #000;
+        }
+        .body-middle{
+            z-index: 2;
+            position: absolute; 
+            text-align: center;
+            font-size: 30%;
+            line-height: 15px;
+            vertical-align: middle;
+            top: -2px;
+            left: 21px;
+            width: 48px;
+            height: 52px;
+            background-color: azure;
+            transform: rotate(-90deg);
+        }
+        .amount-middle{
+            z-index: 2;
+            position: absolute; 
+            top: 14px;
+            right: -2px;
+            font-size: xx-small;
+            transform: rotate(-90deg);
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .lightblue{
+            background-color: lightblue;
+        }
+        .brown{
+            background-color: brown;
+        }
+        .pink{
+            background-color: darkorchid;
+        }
+        .orange{
+            background-color: orange;
+        }
+
+        .chance-deck{
+            position: absolute;
+            top: 45px;
+            left: 20px;
+            transform: rotate(-45deg);
+            height: 100px;
+            width: 150px;
+            border: ridge wheat 3px;
+        }
+        .community-deck{
+            position: absolute;
+            bottom: 45px;
+            right: 20px;
+            transform: rotate(-45deg);
+            height: 100px;
+            width: 150px;
+            border: ridge wheat 3px;
+        }
+        .monopoly{
+            position: absolute;
+            top: 170px;
+            left: 80px;
+            transform: rotate(-45deg);
+            height: 100px;
+            width: 300px;
+            border: ridge wheat 3px;
+        }
+        .monoBtn{
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a90329+0,8f0222+48,6d0019+100 */
+            background: rgb(169,3,41); /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 48%, rgba(109,0,25,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 48%,rgba(109,0,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 48%,rgba(109,0,25,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient();
+            color: aliceblue;
+            font-size: larger;
+            font-family: 'Lobster', cursive;
+        }
+    </style>
+</head>
+<body class="jumbotron">
+    <div class="container">
+        <table class="m-auto">
+            <tr>
+                <td class="corner"></td>
+                <td class="top">
+                    <div class="tittle red"></div>
+                    <div class="body">KENTUCKY AVENUE</div>
+                    <p class="amount">220</p>
+                </td>
+                <td class="top">
+                    <div class="chance-top"></div>
+                </td>
+                <td class="top">
+                    <div class="tittle red"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="top">
+                    <div class="tittle red"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="top"></td>
+                <td class="top">
+                    <div class="tittle yellow"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="top">
+                    <div class="tittle yellow"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="top"></td>
+                <td class="top">
+                    <div class="tittle yellow"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="corner"></td>
+            </tr>
+            <tr>
+                <td class="left">
+                    <div class="tittle-middle orange"></div>
+                    <div class="body-middle">KENTUCKY AVENUE</div>
+                    <p class="amount-middle">220</p>
+                </td>
+                <td class="center" colspan="9" rowspan="9">
+                    <div class="chance-deck"></div>
+                    <div class="monopoly">
+                        <button class="monoBtn">MONOPOLY</button>
+                    </div>
+                    <div class="community-deck"></div>
+                </td>
+                <td class="right">
+                    <div class="tittle-middle green"></div>
+                    <div class="body-middle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">
+                    <div class="tittle-middle orange"></div>
+                    <div class="body-middle"></div>
+                </td>
+                <td class="right">
+                    <div class="tittle-middle green"></div>
+                    <div class="body-middle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="left"></td>
+                <td class="right"></td>
+            </tr>
+            <tr>
+                <td class="left">
+                    <div class="tittle-middle orange"></div>
+                    <div class="body-middle"></div>
+                </td>
+                <td class="right">
+                    <div class="tittle-middle green"></div>
+                    <div class="body-middle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="left"></td>
+                <td class="right"></td>
+            </tr>
+            <tr>
+                <td class="left">
+                    <div class="tittle-middle pink"></div>
+                    <div class="body-middle"></div>
+                </td>
+                <td class="right"></td>
+            </tr>
+            <tr>
+                <td class="left">
+                    <div class="tittle-middle pink"></div>
+                    <div class="body-middle"></div>
+                </td>
+                <td class="right">
+                    <div class="tittle-middle blue"></div>
+                    <div class="body-middle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="left"></td>
+                <td class="right"></td>
+            </tr>
+            <tr>
+                <td class="left">
+                    <div class="tittle-middle pink"></div>
+                    <div class="body-middle"></div>
+                </td>
+                <td class="right">
+                    <div class="tittle-middle blue"></div>
+                    <div class="body-middle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="corner"></td>
+                <td class="bottom">
+                    <div class="tittle lightblue"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="bottom">
+                    <div class="tittle lightblue"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="bottom"></td>
+                <td class="bottom">
+                    <div class="tittle lightblue"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="bottom"></td>
+                <td class="bottom"></td>
+                <td class="bottom">
+                    <div class="tittle brown"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="bottom"></td>
+                <td class="bottom">
+                    <div class="tittle brown"></div>
+                    <div class="body"></div>
+                </td>
+                <td class="corner"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+    <style>
+        input#testo{
+            margin-left: 34.2%;
+        }
+        li:hover{
+            background-color: rgba(255, 0, 0, 0.438) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container center-align">
+        <h2 class="center-align">TO-DO LIST</h2>
+        <div class="row center-align">
+            <input class="col s4 center-align" type="text" id="testo">
+        </div>
+        <button class="waves-effect waves-light btn green" id="insert">AGGIUNGI</button>
+        <ul class="collection" id="list"></ul>
+    </div>
+
+    <script>
+        document.getElementById("insert").addEventListener('click', function(){
+            var para = document.createElement("li");
+            var ele = document.getElementById("testo").value;
+            var text = document.createTextNode(ele);
+
+            para.appendChild(text);
+            para.classList.add("collection-item");
+            para.setAttribute("id", new Date().getTime())
+            para.onclick = function f1(e){
+                let el = document.getElementById(e.target.id);
+                el.remove();
+            };
+            
+            document.getElementById("list").appendChild(para);
+            document.getElementById("testo").value = "";
+
+        })
+
+        
+    </script>
+</body>
+</html>

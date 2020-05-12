@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: solid black 1px;
+            border-radius: 100px;
+        }
+        .one{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border: solid white 1px;
+            background-image: linear-gradient(to right, blue, rgb(157, 133, 243));
+            transition: 2s;
+            box-shadow: black 0 0 9px 2px;
+        }
+        .two{
+            width: 130px;
+            height: 130px;
+            margin: 35px;
+            border: solid white 1px;
+            background-image: linear-gradient(to left, rgb(9, 9, 182), rgb(165, 165, 236));
+        }
+        .one:hover{
+            transform: scale(.9);
+            box-shadow: black 0 0 6px 0;
+        }
+
+        .four{
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            border-left: solid black 2px;
+            border-top: none;
+            border-right: solid black 2px;
+            border-bottom: none;
+            animation: test 5s infinite ease;
+        }
+        @keyframes test{
+            0%{
+                transform: scale(1) rotate(0deg);
+            }
+            50%{
+                transform: scale(0.5) rotate(360deg);
+            }
+            100%{
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .in{
+            height: 20px;
+            width: 20px;
+            float: left;
+            margin: 5px;
+            background-color: black;
+        }
+        .in-one{
+            animation: one 2s infinite ease;
+        }
+        @keyframes one{
+            0%{
+                transform: scale(1.2);
+            }
+            50%{
+                transform: scale(.8);
+            }
+            100%{
+                transform: scale(1.2);
+            }
+        }
+        .in-two{
+            animation: two 2s 250ms infinite ease;
+        }
+        @keyframes two{
+            0%{
+                transform: scale(1.2);
+            }
+            50%{
+                transform: scale(.8);
+            }
+            100%{
+                transform: scale(1.2);
+            }
+        }
+        .in-three{
+            animation: three 2s 500ms infinite ease;
+        }
+        @keyframes three{
+            0%{
+                transform: scale(1.2);
+            }
+            50%{
+                transform: scale(.8);
+            }
+            100%{
+                transform: scale(1.2);
+            }
+        }
+
+        .loaders{
+            width: auto;
+            margin: 60px;
+            border: none;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="loaders">
+    <div class="one">
+        <div class="two"></div>
+    </div>
+</div>
+
+<div class="loaders">
+    <div class="four"></div>
+</div>
+
+<div class="loaders">
+    <div class="in in-one"></div>
+    <div class="in in-two"></div>
+    <div class="in in-three"></div>
+</div> 
+
+</body>
+</html>

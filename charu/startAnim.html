@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5c4e1169df.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .main{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            left: 30%;
+            transform: translateX(-50%);
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 2s ease;
+        }
+        .main-next{
+            position: absolute;
+            width: 500px;
+            text-align: center;
+            left: 30%;
+            transform: translateX(-50%);
+            top: 10%;
+            transform: translateY(-50%);
+            transition: 2s ease;
+        }
+        h1{
+            font-size: 500%;
+        }
+        .next{
+            position: relative;
+            border: solid 1px;
+            width: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 2%;
+            border-radius: 50px;
+        }
+        .next-hide{
+            display: none;
+        }
+        .e{
+            border: solid 1px;
+            height:200px;
+            width: 200px;
+            background-color: aqua;
+            box-shadow: black 3px 3px 4px 6px;
+            clip-path: polygon(0 0, 44% 0, 44% 10%, 9% 10%, 9% 45%, 40% 45%, 40% 56%, 8% 56%, 8% 91%, 44% 91%, 44% 100%, 0 100%);
+        }
+    </style>
+    <script>
+        $(window).on('load',function(){
+            $("#next").click(function () { 
+                $('#main').addClass('main-next');
+                $('#main').removeClass('main');
+
+                $('#next').removeClass('next');
+                $('#next2').removeClass('fa-arrow-right');
+                $('#next').removeClass('next-hide');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main" class="main">
+    <h1>weCode</h1>
+        <div id="next" class="next"><i id="next2" class="fas fa-arrow-right"></i></div>
+    </div>
+    <div class="e"></div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+body{
+    background-color: black;
+}
+#btn{
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(50,202,208);
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    
+}
+#btn:hover{
+    color: white;
+    background-color: rgb(50,202,208);
+    transition: 1s;
+}
+
+.mBox{
+    position: fixed;
+    border-radius: 0 20px 0 20px;
+    top: 50%;
+    left: 50%;
+    border: solid 5px rgb(50,202,208);
+    transform: translate(-50%,-50%) scale(0);
+    background-color: rgb(0,0,0);
+    width: 450px;
+    max-width: 80%;
+    transition: 1s;
+}
+.show{
+     transform: translate(-50%,-50%) scale(1);
+}
+.hide{
+     transform: translate(-50%,-50%) scale(0);
+}
+
+.head{
+    width: 300px;
+    height: 60px;
+}
+.title{
+    color: rgb(50,202,208);
+    width: 270px;
+    padding-left: 75px;
+    padding-top: 30px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Bitter', serif;
+    font-weight: bold;
+}
+.log{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 0px;
+    left: 25px;
+}
+.X{
+    position: absolute;
+    background-color: rgb(0,0,0);
+    color: rgb(50,202,208);
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    
+}
+.table{
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: rgb(0,0,0);
+    
+}
+
+p{
+    margin-left: 25px;
+    font-size: 18px;
+    color: rgb(50,202,208);
+    
+    
+}
+input{
+    text-align: center;
+    color: rgb(162, 230, 233);
+    width: 45%;
+    height: 20px;
+    float: right;
+    margin-right: 10%;
+    background-color: rgb(0,0,0);
+    border-bottom: 1px solid rgb(50,202,208);
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.inputs{
+    color: rgb(162, 230, 233);
+    font-size: small;
+    margin: 15px;
+    margin-left: 40px;
+}
+
+.err{
+    border-bottom: 1px solid rgb(255, 0, 0);
+}
+
+.errMsg{
+    display: none;
+    margin-left: 40%;
+    color: red;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.errShow{
+    display: block;
+}
+
+#enterBtn{
+    margin-left: 45px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgb(50,202,208);
+    border-radius: 5px 5px 5px 5px;
+    background-color: black;
+    color: rgb(50,202,208);
+    font-size: 15px;
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer; 
+}
+#enterBtn:hover{
+    color: white;
+    background-color: rgb(50,202,208);
+    transition: 1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

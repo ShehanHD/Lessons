@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Popup Modal Box</title>
+    <link rel="stylesheet" type="text/css" href="modalBoxStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+    <script src="modelBox.js"></script>
+    </head>
+<body>
+    <button id="btn" type="button" onclick="modal()">Sign Up</button>
+    <div id= "mBox" class="mBox">
+        <div class="head">
+            <div class="title">LOGIN</div>
+                <button class="X" onclick="f1()">X</button>
+                    </div>
+                        <div class="table">
+                            <div class="inputs">Nome<input id="nome" type="type"></div>
+                            <span class="errMsg" id="errNome">Fill your name</span>
+                            <div class="inputs">Cognome<input id="cognome" type="type"></div>
+                            <div class="inputs">Email<input id="email" type="email"></div>
+                            <div class="inputs">Password<input id="pwd" type="password"></div>
+                            <div class="inputs">Confirm Password<input id="rePwd" type="password"></div>
+                            </div>
+                            <div>
+                                 <button type="button" id="enterBtn" onclick="enterBtn()">Enter</button>   
+                        
+                            </div>
+                    </div>
+   
+    
+            
+       </body>
+
+</html>

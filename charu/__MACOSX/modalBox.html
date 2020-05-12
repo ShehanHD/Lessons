@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Modal Box</title>
+    <link rel="stylesheet" type="text/css" href="modalBoxStyle.css">
+    <!-- <script defer src="ModalJs.js"></script> -->
+    <script>
+        //scrivo qua
+
+        function modal(){
+            var ele = document.getElementById("mBox");
+
+            ele.classList.add("show"); // qua dice a aggiunger una classe alla elemento mBox ok?
+            ele.classList.remove("hide");
+        }
+
+        function f1(){
+            var ele = document.getElementById("mBox");
+
+            ele.classList.add("hide"); 
+            ele.classList.remove("show");
+        }
+
+
+    </script>
+    </head>
+<body>
+    <button type="button" onclick="modal()">Click me</button> 
+    <!-- quando clicca questa dobbiamo visualizzare il modulo -->
+    
+    <div id="mBox" class="mBox">
+        <div class="head">
+            <div class="title">LOGIN</div>
+                <button class="X" onclick="f1()">X</button> 
+                    </div>
+                        <div class="table">
+                            <p>Nome<input type="type"></p>
+                            <p>Cognome<input type="type"></p>
+                            <p>Email<input type="email"></p>
+                            <p>Password<input type="password"></p>
+                            <p>Confirm Password<input type="password"></p>
+                            
+                        </div>
+                    </div>
+    <div id="overlay">
+    </div>
+            
+       </body>
+
+</html>
